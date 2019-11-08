@@ -1,0 +1,7 @@
+{
+  "name": "BlocEstate",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
