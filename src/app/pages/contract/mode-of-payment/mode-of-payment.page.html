@@ -1,0 +1,54 @@
+<ion-header no-border>
+
+  <ion-toolbar class="ion-text-center">
+
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" shape="round" routerLink="/contract/my-contracts">
+        <ion-icon name="arrow-back" mode="ios" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Mode of Payment</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-grid no-padding>
+
+    <ion-row>
+      <ion-text class="ion-text-title" color="primary">
+        Select your mode of payment
+      </ion-text>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col size="12">
+        <ion-card color="white" routerLink="/contract/step-six">
+          <ion-card-title>
+            Wire Transfer
+          </ion-card-title>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card color="white" routerLink="electronic-funds-transfer">
+          <ion-card-title>
+            Electronic Funds Transfer
+          </ion-card-title>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card color="white" routerLink="/contract/step-six">
+          <ion-card-title>
+            Draft or Certified Cheque
+          </ion-card-title>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

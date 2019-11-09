@@ -1,0 +1,99 @@
+<ion-header no-border>
+    <ion-toolbar mode="ios">
+      <ion-title>Step 4. Final Property Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content color="light">  
+    <ion-card color="white">
+      <ion-grid>
+        <ion-row class="ion-padding-horizontal">
+          <ion-col>
+            <ion-text class="ion-text-bold" color="primary">
+              Desired Possession Date
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="11">
+                <ion-datetime [(ngModel)]="globals.contractInfo.stepFour.desired_possession_date" placeholder="Select Date">
+                  </ion-datetime>
+              </ion-col>
+              <ion-col size="1" class="vertical-center">
+                <ion-icon name="calendar"></ion-icon>
+              </ion-col>
+            </ion-row>
+      </ion-grid>
+    </ion-card>
+  
+    <ion-card color="white">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text class="ion-text-bold" color="primary">
+              Select those that apply:
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="1" class="vertical-center">
+            <ion-checkbox></ion-checkbox>
+          </ion-col>
+          <ion-col class="ion-text-justify" size="11">
+            <p>This offer is conditional upon me securing a mortgage of at least the amount and at most the interest rate
+              of the described in my preapproval documents.
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="1" class="vertical-center">
+            <ion-checkbox></ion-checkbox>
+          </ion-col>
+          <ion-col class="ion-text-justify" size="11">
+            <p>This offer is conditional upon me selling my own home later than 6 December 2018.
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="1" class="vertical-center">
+            <ion-checkbox></ion-checkbox>
+          </ion-col>
+          <ion-col class="ion-text-justify" size="11">
+            <p>This offer is conditional upon the results of a title search yielding no outstanding liens, unregistered
+              easements, or unknown covenants and that the search also verify that the Seller has the legal authority to
+              sell the property to me.
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  
+    <ion-card color="white">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text class="ion-text-bold" color="primary">
+              Seller Assumed Closing Costs
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-justify">
+            <p>Be specific and use full sentences to describe any costs you wish the Seller to assume prior to closing day
+              such as to repair damages, paint, landscape, etc. For shared costs, write the sseller's portion here. For
+              example, 'The Seller will assume 40% of the costs associated with repairing the driveway prior to closing
+              day based off of the Ezee Repave Company's contract #435 678.'
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+      <ion-textarea class="ion-padding-horizontal" [(ngModel)]="globals.contractInfo.stepFour.seller_assumed_closing_costs" autoGrow="true" placeholder="Input Seller Assumed Closing Costs here..."></ion-textarea>
+    </ion-card>
+  
+    <ion-button expand="block" color="gradient" class="ion-margin" (click)="nextStep()">
+      Submit
+    </ion-button>
+  
+  </ion-content>
+  

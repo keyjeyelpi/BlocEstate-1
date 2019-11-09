@@ -1,0 +1,114 @@
+<ion-header [ngClass]="{'blur': ( globals.isBlur() )}" no-border color="white">
+
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start" color="primary">
+      <ion-button [disabled]="( globals.isBlur() == true )">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="editFilter()" [disabled]="( globals.isBlur() == true )">
+        <ion-icon slot="icon-only" name="options"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Bloc Estate</ion-title>
+  </ion-toolbar>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+        <ion-segment mode="ios" [disabled]="( globals.isBlur() == true )">
+          <ion-segment-button value="for-sale" fill="outline" mode="ios" checked>
+            <ion-label>For Sale</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="for-rent" fill="outline" mode="ios">
+            <ion-label>For Rent</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content color="white">
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="gradient" (click)="globals.toggleBlur()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-button block (click)="signup()" color="danger">
+        <div>
+          <ion-icon name="create" color="white"></ion-icon>
+          <ion-label color="white">List a Property</ion-label>
+        </div>
+      </ion-button>
+
+      <ion-button block (click)="comingSoon()" color="success">
+        <div>
+          <ion-icon name="key" color="white"></ion-icon>
+          <ion-label color="white">Be A Landlord</ion-label>
+        </div>
+      </ion-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <div [ngClass]="{'blur': ( globals.isBlur() )}" style="height: 100% !important;">
+
+    <img *ngIf="properties.length == 0" src="assets/imgs/etc/no-more-properties.svg"
+      style="width: 100%; position: absolute; top: 0px; bottom: 0px; margin: auto">
+
+    <ion-card *ngIf="properties.length != 0" color="light" class="dummy-card"></ion-card>
+
+    <ion-card *ngIf="properties.length != 0" class="main-card ion-margin-top" style="height: 95% !important;">
+
+      <ion-card-header class="img-container" no-padding color="black" swipeAll (swiperight)="previousProperty()"
+        (swipeleft)="nextProperty()" (swipeup)="propertyDetails( currentProperty )"
+        (click)="propertyDetails( currentProperty )">
+        <img src="{{ currentProperty.imageUrl }}" id="property-image-url">
+      </ion-card-header>
+
+      <ion-card-content style="width: 100%;" id="{{currentProperty.id}}">
+
+        <ion-card-title color="white" class="ion-text-bold" id="property-description-address">
+          {{ currentProperty.description.address }}
+        </ion-card-title>
+
+        <ion-card-subtitle color="light" id="property-description-price">
+          {{ currentProperty.description.price }}
+        </ion-card-subtitle>
+
+        <ion-buttons class="bumble-card-buttons">
+
+          <ion-button mode="ios" class="bumble-card-button bumble-card-button-pass" fill="solid" shape="round"
+            color="white" size="large" (click)="dislikeProperty( currentProperty.id )"
+            [disabled]="( globals.isBlur() == true )">
+            <ion-icon slot="icon-only" name="close" color="danger"></ion-icon>
+          </ion-button>
+
+          <ion-button mode="ios" class="bumble-card-button bumble-card-button-heart" fill="solid" shape="round"
+            color="white" size="large" (click)="loveProperty( currentProperty.id )"
+            [disabled]="( globals.isBlur() == true )">
+            <ion-icon color="gradient" class="custom-icon-saved">
+            </ion-icon>
+          </ion-button>
+
+          <ion-button mode="ios" class="bumble-card-button bumble-card-button-check" fill="solid" shape="round"
+            color="white" size="large" (click)="likeProperty( currentProperty.id )"
+            [disabled]="( globals.isBlur() == true )">
+            <ion-icon slot="icon-only" name="checkmark" color="success"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
+</ion-content>

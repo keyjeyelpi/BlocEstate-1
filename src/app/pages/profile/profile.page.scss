@@ -1,0 +1,27 @@
+$size: 25px;
+
+ion-grid.items {
+    padding: 0px 12px;
+
+    ion-col {
+        padding: 0px;
+        margin: 0px;
+
+        ion-card {
+            margin: 4px;
+            height: 166px;
+
+            ion-card-header {
+                ion-icon {
+                    height: $size;
+                    width: $size;
+                }
+            }
+
+            ion-card-content {
+                position: absolute;
+                bottom: 0px;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+<!-- <ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="secondary">
+      <ion-button (click)="close()" color="gradient">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{information.title}}</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content color="light">
+  <ion-card class="ion-text-center ion-padding" color="gradient">
+    <ion-card-title class="ion-text-bold">
+      {{information.title}}
+    </ion-card-title>
+  </ion-card>
+
+  <ion-card color="white">
+    <ion-img color="light" *ngIf="information.image; else defaultImage" src="assets/imgs/estate/{{information.image}}">
+    </ion-img>
+    <ng-template #defaultImage>
+      <ion-img color="light" src="assets/imgs/estate/default.svg">
+      </ion-img>
+    </ng-template>
+  </ion-card>
+
+  <ion-card color="white" class="ion-padding-vertical">
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <ion-text class="ion-text-bold" color="primary">
+            COSTS
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding-horizontal">
+        <ion-col>
+          <ion-text>
+            Real Estate Fee - ${{information.cost | number : fractionSize}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding-horizontal">
+        <ion-col>
+          <ion-text>
+            Maintenance Fee - ${{information.maintenance | number : fractionSize}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-padding-horizontal">
+        <ion-col>
+          <ion-text>
+            Total Fee - ${{total | number : fractionSize}}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="gradient" (click)="close()">
+      <ion-icon name="arrow-back" mode="ios"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" shape="round" routerLink="/contract/my-contracts">
+        <ion-icon slot="icon-only" name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Step 6. Taking Photos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let photo of photos">
+    <img src="{{photo}}">
+  </ion-card>
+
+  <ion-button (click)="takePhotos()" expand="full" color="gradient"> Take Photos</ion-button>
+</ion-content>

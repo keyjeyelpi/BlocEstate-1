@@ -1,0 +1,66 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-title>Step 2. Fixtures, Chatels and Rentals</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+  <ion-card class="ion-padding" color="white">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text class="ion-text-bold" color="primary">
+            FIXTURES
+          </ion-text>
+          <p class="ion-text-justify">
+            Be specific and use full sentences. For Example, instead of saying 'the crystal chandelier', try saying 'the
+            crystal chandelier in the dining room on the first floor'.
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-textarea [(ngModel)]="globals.contractInfo.stepTwo.fixtures" autoGrow="true" placeholder="Input Fixtures data here..."></ion-textarea>
+  </ion-card>
+
+  <ion-card class="ion-padding" color="white">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text class="ion-text-bold" color="primary">
+            CHATELS
+          </ion-text>
+          <p class="ion-text-justify">
+            Be specific and use full sentences. For Example, instead of saying 'the dining table', try saying 'the black
+            rectangular wooden dining table with its four associated brown velvet chairs located in the dining room on
+            the main floor.'
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-textarea [(ngModel)]="globals.contractInfo.stepTwo.chatels" autoGrow="true" placeholder="Input Chatels data here..."></ion-textarea>
+  </ion-card>
+
+  <ion-card class="ion-padding" color="white">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text class="ion-text-bold" color="primary">
+            RENTALS
+          </ion-text>
+          <p class="ion-text-justify">
+            Be specific and use full sentences. For Example, instead of saying 'the furnace', try saying 'the GE furnace
+            installed 9 September 2016 currently on a 5 year rental term under Energia Heating Company as order number
+            A674 H43 234.'
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-textarea [(ngModel)]="globals.contractInfo.stepTwo.rentals" autoGrow="true" placeholder="Input Rentals data here..."></ion-textarea>
+  </ion-card>
+
+  <ion-button expand="block" color="gradient" class="ion-margin" (click)="nextStep()">
+    Continue
+  </ion-button>
+
+</ion-content>

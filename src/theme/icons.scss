@@ -1,0 +1,88 @@
+ion-icon {
+   &[class*="custom-"] {
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      height: 1em;
+   }
+
+
+
+   &[class*="custom-icon-home"] {
+      mask-image: url(/assets/icon/home.svg);
+   }
+
+   &[class*="custom-icon-saved"] {
+      mask-image: url(/assets/icon/saved.svg);
+   }  
+
+   &[class*="custom-icon-profile"] {
+      mask-image: url(/assets/icon/profile.svg);
+   }
+
+   &[class*="custom-icon-chat-support"] {
+      mask-image: url(/assets/icon/chat-support.svg);
+   }  
+
+   &[class*="custom-icon-settings"] {
+      mask-image: url(/assets/icon/settings.svg);
+   }
+
+   &[class*="custom-icon-menu-notifications"] {
+      mask-image: url(/assets/icon/menu/notifications.svg);
+   }
+
+   &[class*="custom-icon-menu-payment"] {
+      mask-image: url(/assets/icon/menu/payment.svg);
+   }
+
+   &[class*="custom-icon-menu-contract-agreements"] {
+      mask-image: url(/assets/icon/menu/contract-agreements.svg);
+   }
+
+   &[class*="custom-icon-menu-privacy-policy"] {
+      mask-image: url(/assets/icon/menu/privacy-policy.svg);
+   }
+
+   &[class*="custom-icon-menu-terms-and-conditions"] {
+      mask-image: url(/assets/icon/menu/terms-and-conditions.svg);
+   }
+
+   &[class*="custom-icon-menu-about-us"] {
+      mask-image: url(/assets/icon/menu/about-us.svg);
+   }
+
+   &[class*="custom-icon-menu-logout"] {
+      mask-image: url(/assets/icon/menu/logout.svg);
+   }
+
+   &[class*="custom-icon-location"] {
+      mask-image: url(/assets/icon/location.svg);
+   }
+
+   &[class*="custom-icon-house"] {
+      mask-image: url(/assets/icon/filter/house.svg);
+   }  
+
+   &[class*="custom-icon-condominium"] {
+      mask-image: url(/assets/icon/filter/condominium.svg);
+   }
+
+   &[class*="custom-icon-apartment"] {
+      mask-image: url(/assets/icon/filter/apartment.svg);
+   }  
+
+   &[class*="custom-icon-buyer"] {
+      mask-image: url(/assets/icon/buyer.svg);
+   }
+
+   &[class*="custom-icon-seller"] {
+      mask-image: url(/assets/icon/seller.svg);
+   }  
+
+   &[class*="custom-icon-cake"] {
+      mask-image: url(/assets/icon/cake.svg);
+   }
+}

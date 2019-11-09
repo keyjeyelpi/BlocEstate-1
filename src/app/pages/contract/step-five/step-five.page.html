@@ -1,0 +1,116 @@
+<ion-header no-border>
+    <ion-toolbar mode="ios">
+        <ion-title>Step 5. Reviewing Details</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+
+    <ion-card color="white" class="ion-padding" (click)="goTo( 2 )">
+        <ion-grid>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Fixtures
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepTwo.fixtures}}
+                </p>
+            </ion-row>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Chatels
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepTwo.chatels}}
+                </p>
+            </ion-row>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Rentals
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepTwo.rentals}}
+                </p>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-card color="white" class="ion-padding" (click)="goTo( 3 )">
+        <ion-grid>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Purchase price
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepThree.purchase_price}}
+                </p>
+            </ion-row>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Downpayment Value
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepThree.downpayment_value}}
+                </p>
+            </ion-row>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Deposit Value
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepThree.deposit_value}}
+                </p>
+            </ion-row>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Amount to be Financed
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepThree.amount_to_be_financed}}
+                </p>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-card color="white" class="ion-padding" (click)="goTo( 4 )">
+        <ion-grid>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Purchase price
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepFour.desired_possession_date}}
+                </p>
+            </ion-row>
+            <ion-row>
+                <ion-text color="primary" class="ion-title ion-text-bold">
+                    Downpayment Value
+                </ion-text>
+            </ion-row>
+            <ion-row class="ion-padding-bottom">
+                <p class="ion-text-justify">
+                    {{globals.contractInfo.stepFour.seller_assumed_closing_costs}}
+                </p>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <ion-button expand="block" color="gradient" class="ion-margin" (click)="closeModal()">
+        Confirm
+    </ion-button>
+
+</ion-content>

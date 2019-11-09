@@ -1,0 +1,32 @@
+ion-label {
+  color: #808080;
+}
+
+ion-card {
+  margin: 16px 8px;
+}
+
+ion-card.ion-type {
+  height: 150px;
+
+  ion-text {
+    text-overflow: scale;
+  }
+}
+
+ion-card#location {
+  line-height: 60px;
+  height: 60px;
+  padding: 0px 16px;
+
+  ion-text {
+    font-size: 13px;
+    height: 25px;
+  }
+
+  ion-icon {
+    margin: 12px 0px;
+    height: 35px;
+    width: 35px;
+  }
+}

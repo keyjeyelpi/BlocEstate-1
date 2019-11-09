@@ -1,0 +1,91 @@
+<ion-header no-border>
+
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding-vertical" color="light">
+
+  <ion-card class="ion-padding ion-margin-vertical" color="gradient" (click)="editProfile()">
+    <ion-card-content>
+      <ion-text float-left class="ion-text-bold" style="font-size: 25px;">
+        Hello KJ
+      </ion-text>
+      <ion-avatar float-right style="top: -4px; position: relative;">
+        <img src="assets/imgs/etc/dummy-profile-image.png">
+      </ion-avatar>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid class="items">
+    <ion-row class="ion-padding-horizontal">
+      <ion-text class="ion-text-bold">
+        My List
+      </ion-text>
+    </ion-row>
+
+    <ion-row no-margin>
+      <ion-col size="6">
+        <ion-card color="white" routerLink="/contract/view-schedule">
+          <ion-card-header>
+            <ion-icon float-left color="primary" name="calendar"></ion-icon>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text class="ion-text-bold">
+              Viewing Schedule
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card color="white" routerLink="/contract/my-contracts">
+          <ion-card-header>
+            <ion-icon float-left color="primary" name="today"></ion-icon>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text class="ion-text-bold">
+              My Contracts
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding-horizontal ion-padding-top">
+      <ion-text class="ion-text-bold">
+        Settings
+      </ion-text>
+    </ion-row>
+
+    <ion-row no-margin>
+      <ion-col size="6" *ngFor="let item of items">
+        <ion-card color="white" routerLink="{{ item.routerLink }}">
+          <ion-card-header>
+            <ion-icon float-left color="primary" class="{{ item.icon }}"></ion-icon>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text class="ion-text-bold">
+              {{ item.name }}
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-padding">
+      <ion-col class="ion-text-center">
+        <ion-label color="primary">
+          BlocEstate
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="gradient" (click)="editProfile()">
+      <ion-icon mode="md" name="create"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

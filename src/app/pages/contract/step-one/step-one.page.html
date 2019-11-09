@@ -1,0 +1,69 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" color="primary" (click)="closeModal( false )">
+        <ion-icon name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Step 1. Buyer Confirmation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card color="white">
+    <ion-card-content class="ion-text-justify">
+      <ion-text class="ion-text-center ion-text-bold" color="primary">
+        Create Your Bid
+      </ion-text>
+      <p>First thing is some basic legal stuff to ensure that you are not acting as an agent for someone else, that you
+        are capable of understanding and signing this offer, and that you have had an opportunity to view the house.
+        (Whether you actually took that opportunity is irrelevant at this time)</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="white">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1" class="vertical-center">
+          <ion-checkbox color="primary"></ion-checkbox>
+        </ion-col>
+        <ion-col size="11" class="ion-padding-horizontal ion-text-justify">
+          <p>As the signatory party to this bid, I verify that I have had an opportunity to, or forego the chance to,
+            inspect and scrutinize the property subject to this bid along with all associated legal documents including
+            but not limited to, plan of survey, inspection reports, appraisals, deeds, and status cerificates.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1" class="vertical-center">
+          <ion-checkbox color="primary"></ion-checkbox>
+        </ion-col>
+        <ion-col size="11" class="ion-padding-horizontal ion-text-justify">
+          <p>I verify that all parties signatory to this offer have the mental capacity to read and sign this offer and
+            that those same parties possess the financial means to pursue the intent of purchasing this property.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="1" class="vertical-center">
+          <ion-checkbox color="primary"></ion-checkbox>
+        </ion-col>
+        <ion-col size="11" class="ion-padding-horizontal ion-text-justify">
+          <p>I verify that I am not submitting this bid on behalf of another as a part of an agency or
+            customer-relationship wherein I am acting as an intermediary. I further acknowledge that in signing this
+            document all signatory parties must have legal stake in the property.</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-button expand="block" color="gradient" class="ion-margin" (click)="cardPopover()">
+    Continue
+  </ion-button>
+
+  <!-- <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="gradient" routerLink="/contract/my-contracts">
+      <ion-icon name="arrow-back" mode="ios"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+</ion-content>

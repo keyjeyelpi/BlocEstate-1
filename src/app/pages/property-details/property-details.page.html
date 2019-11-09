@@ -1,0 +1,521 @@
+<ion-header no-border color="white" [ngClass]="{'blur': ( globals.isBlur() )}" >
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" (click)="closeModal()">
+        <ion-icon name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Property Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" *ngFor="let propertyDetail of propertyDetails">
+  <div [ngClass]="{'blur': ( globals.isBlur() )}" style="height: 100% !important;">
+    <ion-grid no-padding *ngFor="let building of propertyDetail.Buildings">
+    <ion-row class="ion-no-margin ion-no-padding">
+      <ion-card color="white">
+        <ion-card-header class="ion-no-padding" *ngFor="let photo of building.Photos">
+          <ion-img src="{{photo.SequenceID}}"></ion-img>
+        </ion-card-header>
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="ion-padding-horizontal">
+      <ion-col size="12">
+        <ion-text color="primary" class="ion-text-bold card-title">
+          BUILDING
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text class="ion-text-bold">
+          Here are the basic informations needed to know about the building.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-item lines="none">
+        <ion-grid class="ion-padding">
+          <ion-row>
+            <ion-col size="6">
+              <ion-text>
+                <b>Price :</b><br /> ${{building.Price}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Maintenance Fee :</b><br /> ${{building.MaintenanceFee}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Bathroom Total :</b><br /> {{building.BathroomsTotal}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Bedroom Total :</b><br /> {{building.BedroomsTotal}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Age :</b><br /> {{building.Age}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Ceiling Height :</b><br /> {{building.CeilingHeight}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Constructed Date :</b><br /> {{building.ConstructedDate}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Renovated Date :</b><br /> {{building.RenovatedDate}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Fireplace Total :</b><br /> {{building.FireplaceTotal}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Bathroom Total :</b><br /> {{building.BathroomsTotal}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Fixture :</b><br /> {{building.Fixture}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Stories Total :</b><br /> {{building.StoriesTotal}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Size Exterior :</b><br /> {{building.SizeExterior}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Size Interior :</b><br /> {{building.SizeInterior}}
+              </ion-text>
+            </ion-col>
+            <ion-col size="12">
+              <ion-text>
+                <b>Amenities :</b><br />
+                <p class="ion-text-justify">{{building.Amenities}}</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="ion-padding-top ion-padding-horizontal">
+      <ion-col size="12">
+        <ion-text class="ion-text-bold card-title" color="primary">
+          LAND
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text class="ion-text-bold">
+          Here are the informations needed to know about the land of the building.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-item lines="none" *ngFor="let land of building.Land">
+        <ion-grid class="ion-padding">
+          <ion-row>
+            <ion-col size="6">
+              <ion-text>
+                <b>Size Total : </b>
+                <br />
+                <ion-text>{{land.SizeTotal}}</ion-text>
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Clear Total : </b>
+                <br />
+                <p>{{land.ClearTotal}}</p>
+              </ion-text>
+            </ion-col>
+            <ion-col size="12">
+              <ion-text>
+                <b>Amenities : </b>
+                <br />
+                <p class="ion-text-justify"> {{land.Amenities}}
+                </p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="ion-padding-top ion-padding-horizontal">
+      <ion-col size="6">
+        <ion-text class="ion-text-bold card-title" color="primary">
+          ROOMS
+        </ion-text>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-text class="card-subtitle">
+          Number of Rooms : {{building.Rooms.length}}
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text class="ion-text-bold">
+          Here are the informations needed to know about the rooms of the building. <i>(Swipe left in order to view the
+            next room)</i>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <div class="container">
+        <div class="scroll" scrollX="true">
+          <ion-card class="ion-padding" color="white" *ngFor="let room of building.Rooms ; let i = index">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-text class="ion-text-bold" color="primary">
+                    ROOM {{ i + 1 }}
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-text>
+                    <b>Type :</b><br /> {{room.Type}}
+                  </ion-text>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-text>
+                    <b>Width :</b><br /> {{room.Width}}
+                  </ion-text>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-text>
+                    <b>Length :</b><br /> {{room.Length}}
+                  </ion-text>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-text>
+                    <b>Level :</b><br /> {{room.Level}}
+                  </ion-text>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-text>
+                    <b>Description :</b><br />
+                    <p class="ion-text-justify">{{room.Description}}</p>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="ion-padding-top ion-padding-horizontal">
+      <ion-col size="12">
+        <ion-text class="ion-text-bold" color="primary">
+          LEASE
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text class="ion-text-bold">
+          Here are the informations needed to know about the Leases of the building.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-item lines="none">
+        <ion-grid class="ion-padding">
+          <ion-row>
+            <ion-col size="6">
+              <ion-text>
+                <b> Lease : </b>
+                <br />
+                {{ building.Lease }}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b> Lease per Time : </b>
+                <br />
+                {{ building.LeasePerTime }}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b> Lease per Unit : </b>
+                <br />
+                {{ building.LeasePerUnit }}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b> Lease Type : </b>
+                <br />
+                {{ building.LeaseType }}
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="ion-padding-top ion-padding-horizontal">
+      <ion-col size="6">
+        <ion-text class="ion-text-bold" color="primary">
+          AGENTS
+        </ion-text>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-text class="card-subtitle">
+          Number of Agents : {{building.Agents.length}}
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text class="ion-text-bold">
+          Here are the informations needed to know about the agents handling the building. <i>(Swipe left in order to
+            view the next room)</i>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <div class="container">
+        <div class="scroll" scrollX="true">
+          <ion-card class="ion-padding" color="white" *ngFor="let agent of building.Agents ; let i = index">
+            <ion-grid>
+
+              <ion-row>
+                <ion-col>
+                  <ion-text class="ion-text-bold" color="primary">
+                    AGENT {{ i + 1 }}
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col size="1">
+                  <ion-icon color="primary" name="person"></ion-icon>
+                </ion-col>
+                <ion-col size="11">
+                  <ion-text>
+                    {{agent.Name}}
+                    <br />
+                    <i>{{agent.Position}}</i>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let address of agent.Addresses ; let i = index">
+                <ion-col size="1">
+                  <ion-icon color="primary" name="home"></ion-icon>
+                </ion-col>
+                <ion-col size="11">
+                  <ion-text class="ion-text-justify">
+                    {{address.StreetAddress}}, {{address.City}}, {{address.Province}}, {{address.PostalCode}},
+                    {{address.Country}}
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let phone of agent.Phones ; let i = index">
+                <ion-col size="1">
+                  <ion-icon color="primary" name="call"></ion-icon>
+                </ion-col>
+                <ion-col size="11">
+                  <ion-text>
+                    {{phone.Number}}
+                    <br />
+                    <i>{{phone.ContactType}}</i>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let website of agent.Websites ; let i = index">
+                <ion-col size="1">
+                  <ion-icon color="primary" name="globe"></ion-icon>
+                </ion-col>
+                <ion-col size="11">
+                  <ion-text>
+                    <a href="{{website.URL}}">{{website.URL}}</a>
+                    <br />
+                    <i>{{website.ContactType}}</i>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-text class="ion-text-bold" color="primary">
+                    OFFICE
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let office of agent.Offices">
+                <ion-col size="1">
+                  <ion-icon color="primary" name="business"></ion-icon>
+                </ion-col>
+                <ion-col size="11">
+                  <ion-text>
+                    {{office.Name}}
+                  </ion-text>
+                </ion-col>
+                <ion-col size="5" offset="1">
+                  <ion-text>
+                    <b>Franchisor : </b><br />{{office.Franchisor}}
+                  </ion-text>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-text>
+                    <b>Organization Type : </b><br />{{office.OrganizationType}}
+                  </ion-text>
+                </ion-col>
+
+                <ion-row *ngFor="let address of office.Addresses ; let i = index">
+                  <ion-col size="11" offset="1">
+                    <ion-text class="ion-text-justify">
+                      <b>Address {{ i + 1}} : </b>
+                      <br />
+                      {{address.StreetAddress}}, {{address.City}}, {{address.Province}}, {{address.PostalCode}},
+                      {{address.Country}}
+                    </ion-text>
+                  </ion-col>
+                </ion-row>
+
+              </ion-row>
+
+            </ion-grid>
+          </ion-card>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="ion-padding-top ion-padding-horizontal">
+      <ion-col size="12">
+        <ion-text class="ion-text-bold" color="primary">
+          ADDITIONAL
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <ion-text class="ion-text-bold">
+          Here are the additional informations needed to know about the building.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-item lines="none">
+        <ion-grid class="ion-padding">
+          <ion-row>
+            <ion-col size="12">
+              <ion-text>
+                <b>Amenities Nearby : </b>
+                <br />
+                <p class="ion-text-justify">
+                  {{ building.AmenitiesNearby }}
+                </p>
+              </ion-text>
+            </ion-col>
+            <ion-col size="12">
+              <ion-text>
+                <b>Features : </b>
+                <br />
+                <p class="ion-text-justify">
+                  {{ building.Features }}
+                </p>
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Contract Date : </b>
+                <br />
+                {{ building.ListingContractDate }}
+              </ion-text>
+            </ion-col>
+            <ion-col size="12">
+              <ion-text>
+                <b> Location Description : </b>
+                <br />
+                <p class="ion-text-justify">
+                  {{ building.LocationDescription }}
+                </p>
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b> Machinery : </b>
+                <br />
+                {{ building.Machinery }}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b> MaintenanceFee : </b>
+                <br />
+                {{ building.MaintenanceFee }}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b> Ownership Type : </b>
+                <br />
+                {{ building.OwnershipType }}
+              </ion-text>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <b>Parking Space Total: </b>
+                <br />
+                {{ building.ParkingSpaceTotal }}
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="showFab === true">
+    <ion-fab-button color="gradient" (click)="globals.toggleBlur()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list inline-block side="top">
+      <ion-button block routerLink="/kyc" (click)="globals.toggleBlur(); closeModal()" color="danger">
+        <div>
+          <ion-icon name="cash" color="white"></ion-icon>
+          <ion-label color="white">Buy Now</ion-label>
+        </div>
+      </ion-button>
+
+      <ion-button block (click)="bookDate()" color="success">
+        <div>
+          <ion-icon name="calendar" color="white"></ion-icon>
+          <ion-label color="white">Book a Viewing Schedule</ion-label>
+        </div>
+      </ion-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-datetime placeholder="Select Date" id="booking-date" style="display: none;" (ionChange)="closeModal( true )">
+  </ion-datetime>
+</ion-content>

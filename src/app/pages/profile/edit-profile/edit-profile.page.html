@@ -1,0 +1,121 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios" color="gradient">
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" (click)="closeModal()">
+        <ion-icon name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" class="ion-no-padding">
+  <ion-item color="gradient">
+    <ion-grid class="ion-padding-vertical">
+      <ion-row>
+        <ion-col>
+          <ion-avatar class="avatar-large">
+            <ion-img (click)="changeProfileAvatar()" src="{{user_info.photo}}"></ion-img>
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-padding-top">
+        <ion-col class="ion-text-center">
+          <ion-text class="ion-text-bold fs-15">
+            PROFILE PHOTO
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-item color="white" lines="none" class="underline">
+    <ion-icon name="person" color="primary"></ion-icon>
+    <ion-text color="primary" class="fs-15 ion-text-bold">
+      NAME
+    </ion-text>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline">
+    <ion-input [ngModel]="user_info.name.first" placeholder="First"></ion-input>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline ion-margin-bottom">
+    <ion-input [ngModel]="user_info.name.last" placeholder="Last"></ion-input>
+  </ion-item>
+
+  <ion-item color="white" lines="none" class="underline">
+    <ion-icon color="primary" name="quote"></ion-icon>
+    <ion-text color="primary" class="fs-15 ion-text-bold">
+      ABOUT ME
+    </ion-text>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline ion-margin-bottom">
+    <ion-textarea [ngModel]="user_info.about_me" autoGrow="true" placeholder="Enter Status Here..." style="min-height: 150px;"></ion-textarea>
+  </ion-item>
+
+  <ion-item color="white" lines="none" class="underline">
+    <ion-icon color="primary" class="custom-icon-cake"></ion-icon>
+    <ion-text color="primary" class="fs-15 ion-text-bold">
+      BIRTHDAY
+    </ion-text>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline ion-margin-bottom">
+    <ion-datetime [ngModel]="user_info.birthday" placeholder="Jan 01, 1971">
+    </ion-datetime>
+  </ion-item>
+
+  <ion-item color="white" lines="none" class="underline">
+    <ion-icon color="primary" name="call"></ion-icon>
+    <ion-text color="primary" class="fs-15 ion-text-bold">
+      PHONE
+    </ion-text>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline ion-margin-bottom">
+    <ion-input [ngModel]="user_info.phone" placeholder="(999) 999 9999" type="tel"></ion-input>
+  </ion-item>
+
+  <ion-item color="white" lines="none" class="underline">
+    <ion-icon color="primary" name="mail"></ion-icon>
+    <ion-text color="primary" class="fs-15 ion-text-bold">
+      EMAIL
+    </ion-text>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline ion-margin-bottom">
+    <ion-input [ngModel]="user_info.email" placeholder="email@example.com" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item color="white" lines="none" class="underline">
+    <ion-icon color="primary" name="pricetags"></ion-icon>
+    <ion-text color="primary" class="fs-15 ion-text-bold">
+      JOB
+    </ion-text>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline">
+    <ion-input placeholder="Title"></ion-input>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline ion-margin-bottom">
+    <ion-textarea [ngModel]="user_info.job" autoGrow="true" placeholder="Enter Job Description Here..." style="min-height: 150px;"></ion-textarea>
+  </ion-item>
+
+  <ion-item color="white" lines="none" class="underline">
+    <ion-icon color="primary" name="pin"></ion-icon>
+    <ion-text color="primary" class="fs-15 ion-text-bold">
+      LOCATION
+    </ion-text>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline">
+    <ion-input [ngModel]="user_info.location.title" placeholder="Title"></ion-input>
+  </ion-item>
+  <ion-item color="white" lines="none" class="underline ion-margin-bottom">
+    <ion-textarea [ngModel]="user_info.location.description" autoGrow="true" placeholder="Enter Location Description Here..." style="min-height: 150px;">
+    </ion-textarea>
+  </ion-item>
+
+  <div style="display: none;">
+    <ion-input type="file" accept="image/*" id="changeAvatar" (ionChange)="path( $event )"></ion-input>
+  </div>
+</ion-content>

@@ -1,0 +1,12 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom" [ngClass]="{'blur': ( globals.isBlur() )}">
+    <ion-tab-button *ngFor="let page of pages" tab="{{ page.pageName }}" [disabled]="( globals.isBlur() == true )">
+      <ion-icon color="gradient" class="{{ page.iconClass }}"></ion-icon>
+      <ion-label>{{ page.title }}</ion-label>
+    </ion-tab-button>
+    <ion-tab-button [disabled]="( globals.isBlur() == true )" href="http://support.blocestate.com/js/phplive_v2.js.php?v=0%7C1565276815%7C0%7C&r=">
+      <ion-icon color="gradient" class="custom-icon-chat-support"></ion-icon>
+      <ion-label>Chat Support</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

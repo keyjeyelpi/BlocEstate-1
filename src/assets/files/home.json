@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "imageUrl": "assets/imgs/estate/1.jpg",
+        "description": {
+            "address": "Science City of Muñoz, Nueva Ecija",
+            "price": "$ 500,000"
+        }
+    },
+    {
+        "id": "2",
+        "imageUrl": "assets/imgs/estate/2.jpg",
+        "description": {
+            "address": "Tarlac City, Tarlac",
+            "price": "$ 750,000"
+        }
+    },
+    {
+        "id": "3",
+        "imageUrl": "assets/imgs/estate/3.jpg",
+        "description": {
+            "address": "Central Luzon, Nueva Ecija",
+            "price": "$ 850,000"
+        }
+    },
+    {
+        "id": "4",
+        "imageUrl": "assets/imgs/estate/4.jpg",
+        "description": {
+            "address": "San Antonio, Nueva Ecija",
+            "price": "$ 950,000"
+        }
+    }
+]

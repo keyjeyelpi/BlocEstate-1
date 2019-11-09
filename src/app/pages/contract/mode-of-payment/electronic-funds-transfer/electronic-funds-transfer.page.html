@@ -1,0 +1,80 @@
+<ion-header no-border>
+
+  <ion-toolbar class="ion-text-center">
+
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" shape="round" routerLink="/contract/mode-of-payment">
+        <ion-icon name="arrow-back" mode="ios" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Electric Funds Transfer</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content color="light" >
+
+  <ion-grid no-padding>
+
+    <ion-row no-padding>
+      <ion-card class="ion-padding" color="white">
+        <ion-img src="assets/files/BESC.jpg"></ion-img>
+      </ion-card>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-item lines="none" style="width: 100%">
+        <ion-grid class="ion-padding">
+          <ion-row class="ion-margin-vertical">
+            <ion-text class="title ion-text-bold ion-text-justify" color="primary">
+              Enter your credentials on the following:
+            </ion-text>
+          </ion-row>
+
+          <ion-row>
+            <ion-text class="subtitle">
+              Bank Code:
+            </ion-text>
+          </ion-row>
+          <ion-row>
+            <ion-input [ngStyle]="{'border':bank.code === null ?  'solid 1px var(--ion-color-danger)' : '', 'background':bank.code === null ?  '' : 'var(--ion-color-light)' }" type="number" [(ngModel)]="bank.code">
+
+            </ion-input>
+          </ion-row>
+
+          <ion-row>
+            <ion-text class="subtitle">
+              Bank Transit Number:
+            </ion-text>
+          </ion-row>
+          <ion-row>
+            <ion-input [ngStyle]="{'border':bank.transit_number === null ?  'solid 1px var(--ion-color-danger)' : '', 'background':bank.transit_number === null ?  '' : 'var(--ion-color-light)' }" type="number" [(ngModel)]="bank.transit_number">
+
+            </ion-input>
+          </ion-row>
+
+          <ion-row>
+            <ion-text class="subtitle">
+              Bank Account Number:
+            </ion-text>
+          </ion-row>
+          <ion-row>
+            <ion-input [ngStyle]="{'border':bank.account_number === null ?  'solid 1px var(--ion-color-danger)' : '', 'background':bank.account_number === null ?  '' : 'var(--ion-color-light)' }" type="number" [(ngModel)]="bank.account_number">
+
+            </ion-input>
+          </ion-row>
+
+        </ion-grid>
+      </ion-item>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer no-shadow>
+	<ion-toolbar position="bottom">
+    <ion-button expand="block" color="gradient">Submit</ion-button>
+  </ion-toolbar>
+</ion-footer>

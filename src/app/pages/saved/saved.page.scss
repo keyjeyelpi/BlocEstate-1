@@ -1,0 +1,66 @@
+@keyframes home {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}
+
+ion-card-title {
+    font-size: 1.25em;
+}
+
+ion-card-subtitle {
+    font-size: 0.5em;
+}
+
+ion-label.main {
+    font-weight: bolder;
+}
+
+ion-label.sub {
+    font-weight: 300;
+    color: var(--ion-color-dark);
+}
+
+.ion-no-margin-vertical {
+    margin: -16px 0px;
+}
+
+ion-card {
+    height: 20rem !important;
+    width: 100%;
+    left: -16px;
+
+    ion-card-header.img-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        filter: brightness(50%);
+
+        img {
+            all: unset;
+            height: 100% !important;
+            animation-name: home;
+            animation-delay: 500ms;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            position: absolute;
+        }
+
+    }
+
+    ion-card-content {
+        width: 100%;
+        position: absolute;
+        bottom: 0px !important;
+
+        * {
+            z-index: 1;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" shape="round" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-text id="title" color="primary">Hello, let's get started!</ion-text>
+    </ion-row>
+
+    <ion-row>
+      <ion-text id="subtitle">What brings you to Bloc Estate today?</ion-text>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-label>Are you looking for...</ion-label>
+    </ion-row>
+
+    <ion-row id="looking-for" no-padding class="ion-margin-bottom">
+      <ion-col no-margin no-padding size="6">
+        <ion-card [color]="listType == 'sale' ? 'primary' : 'white'" class="ion-padding ion-text-center"
+          color="gradient" (click)="listType = 'sale'">
+          <ion-card-title class="ion-text-bold">Sale</ion-card-title>
+        </ion-card>
+      </ion-col>
+      <ion-col no-margin no-padding size="6">
+        <ion-card [color]="listType == 'rent' ? 'primary' : 'white'" class="ion-padding ion-text-center"
+          (click)="listType = 'rent'">
+          <ion-card-title class="ion-text-bold">Rent</ion-card-title>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-label>Type</ion-label>
+    </ion-row>
+
+    <ion-row id="type" class="ion-margin-bottom">
+      <ion-col *ngFor="let building of buildings" no-margin no-padding size="4">
+        <ion-card [color]="buildingType == building.type ? 'primary' : 'white'"
+          class="ion-padding-vertical ion-text-center ion-type" (click)="buildingType = building.type">
+          <ion-icon style="width: 100%; height: 65%;" class="custom-icon-{{building.icon}}"></ion-icon>
+          <ion-text style="font-size: 12px;" class="ion-text-bold">{{building.type | uppercase}}</ion-text>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-label>Location</ion-label>
+    </ion-row>
+
+    <ion-row class="ion-margin-bottom">
+      <ion-col size="12">
+        <ion-card id="location" color="white" class="ion-padding">
+          <ion-text class="ion-text-bold">Where do you want to Search?</ion-text>
+          <ion-icon float-right name="pin" color="primary"></ion-icon>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col size="12">
+        <ion-label>Price Range</ion-label>
+        <ion-text class="ion-text-bold" float-right>${{ currentMin | number : fractionSize }} -
+          {{ currentMax | number : fractionSize }}</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-bottom">
+      <ion-range id="priceRange" class="ion-margin" [min]="priceRangeMin" [max]="priceRangeMax" step="5000" [(ngModel)]="priceRange"
+        (ionChange)="changeRangeValues(priceRange)" color="primary" dualKnobs="true"></ion-range>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-button class="ion-margin ion-text-bold" size="large" color="primary" expand="block" (click)="signup()">
+    Apply Filter
+  </ion-button>
+
+</ion-content>

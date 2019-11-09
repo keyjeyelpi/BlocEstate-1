@@ -1,0 +1,17 @@
+ion-card {
+    height: 200px;
+    margin: 4px;
+
+    ion-card-content {
+        position: absolute;
+        bottom: 0px;
+
+        ion-card-title {
+            font-size: 20px;
+        }
+        
+        ion-card-subtitle {
+            font-size: 10px;
+        }    
+    }
+}

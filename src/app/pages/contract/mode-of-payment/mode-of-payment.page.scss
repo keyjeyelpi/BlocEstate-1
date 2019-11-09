@@ -1,0 +1,26 @@
+ion-grid {
+    ion-row {
+        margin: 0px;
+
+        ion-text.ion-text-title {
+            margin: 6px 16px;
+            font-size: 2pc;
+            font-family: 'open-sans-bold';
+        }
+
+        ion-col {
+            margin: 0px;
+
+            ion-card {
+                width: auto;
+                padding: 32px 0px;
+                margin: 3px;
+
+                ion-card-title {
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

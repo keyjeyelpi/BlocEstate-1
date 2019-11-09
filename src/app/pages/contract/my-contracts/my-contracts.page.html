@@ -1,0 +1,112 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" color="primary" routerLink="/tabs/profile">
+        <ion-icon name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>My Contracts</ion-title>
+  </ion-toolbar>
+
+  <ion-grid class="ion-padding-vertical">
+    <ion-row>
+      <ion-segment mode="ios">
+
+        <ion-segment-button value="pending" fill="outline" mode="ios" checked (click)="changeSegment( 'pending' )">
+          <ion-label>Pending</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="approved" fill="outline" mode="ios" (click)="changeSegment( 'approved' )">
+          <ion-label>Approved</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="paid" fill="outline" mode="ios" (click)="changeSegment( 'paid' )">
+          <ion-label>Paid</ion-label>
+        </ion-segment-button>
+
+      </ion-segment>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content color="light">
+  <ion-tabs>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let contract of selectedContracts">
+
+          <ion-card class="with-image ion-no-margin" color="white" *ngIf="contract.imageUrl; else withoutImage">
+
+            <ion-card-header class="img-container" no-padding color="black" (click)="clickFunction( contract )">
+              <img src="{{ contract.imageUrl }}" class="contract-image-url">
+            </ion-card-header>
+
+            <ion-card-content class="ion-text-left" (click)="clickFunction( contract)">
+
+              <ion-card-title color="white" class="ion-text-bold" class="contract-description-address">
+                {{ contract.description.address }}
+              </ion-card-title>
+
+              <ion-card-subtitle color="light" class="contract-description-price">
+                {{ contract.description.price }}
+              </ion-card-subtitle>
+            </ion-card-content>
+
+            <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="segmentType == 'pending'">
+
+              <ion-button size="small" shape="round" fill="clear" (click)="cardPopover( contract.id , $event )">
+                <ion-icon color="white" name="close"></ion-icon>
+              </ion-button>
+            </ion-fab>
+          </ion-card>
+
+          <ng-template #withoutImage>
+            <ion-card class="without-image ion-no-margin" color="white" routerLink="/contract/step-one">
+
+              <div class="image-container" style="height: 150px; overflow: hidden;">
+
+                <ion-img color="light" src="/assets/imgs/estate/default.svg">
+                </ion-img>
+
+              </div>
+
+              <ion-card-content>
+
+                <ion-card-title>
+                  {{ contract.description.address }}
+                </ion-card-title>
+
+                <ion-card-subtitle>
+                  {{ contract.description.price }}
+                </ion-card-subtitle>
+
+              </ion-card-content>
+              <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="segmentType == 'pending'">
+
+                <ion-button size="small" shape="round" fill="clear" (click)="cardPopover( contract.id , $event )">
+                  <ion-icon color="danger" name="close"></ion-icon>
+                </ion-button>
+              </ion-fab>
+            </ion-card>
+          </ng-template>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button id="buyer" (click)="toggleType( 'buyer' )" tabindex="1" class="tab-selected">
+        <ion-icon class="custom-icon-buyer"></ion-icon>
+        <ion-label>Buyer</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button id="seller" (click)="toggleType( 'seller' )" tabindex="2">
+        <ion-icon class="custom-icon-seller"></ion-icon>
+        <ion-label>Seller</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

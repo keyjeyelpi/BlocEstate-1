@@ -1,0 +1,29 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-card-title class="ion-text-bold ion-text-center">
+        {{title}}
+      </ion-card-title>
+      <br/>
+      <ion-card-subtitle>
+        {{subtitle}}
+      </ion-card-subtitle>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button expand="block" class="ion-text-center" fill="clear" (click)="deleteCard( true )">
+        <ion-text class="ion-text-bold" color="danger">
+          Yes
+        </ion-text>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="ion-text-center" fill="clear" (click)="deleteCard( false )">
+        <ion-text class="ion-text-bold" color="primary" >
+          No
+        </ion-text>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

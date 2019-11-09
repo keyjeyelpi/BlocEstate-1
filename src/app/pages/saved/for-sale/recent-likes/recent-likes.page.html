@@ -1,0 +1,37 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="secondary">
+      <ion-button fill="clear" routerLink="/tabs/saved">
+      <ion-icon name="arrow-back" mode="ios"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+    <ion-title>Likes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" class="ion-padding">
+  <ion-card id="{{ property.id }}" mode="md" class="ion-margin-top" *ngFor="let property of properties" (click)="showPropertyDetails( property )">
+
+    <ion-card-header class="img-container" no-padding color="black">
+      <img src="{{ property.imageUrl }}" id="property-image-url">
+    </ion-card-header>
+
+    <ion-card-content style="width: 100%;">
+
+      <ion-card-title color="white" class="ion-text-bold" id="property-description-address">
+        {{ property.description.address }}
+      </ion-card-title>
+
+      <ion-card-subtitle color="light" id="property-description-price">
+        {{ property.description.price }}
+      </ion-card-subtitle>
+    </ion-card-content>
+
+  </ion-card>
+
+  <!-- <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button color="gradient" routerLink="/tabs/saved">
+      <ion-icon name="arrow-back" mode="ios"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+</ion-content>

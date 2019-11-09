@@ -1,26 +1,124 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
-
-/* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
 @import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
 
-/* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+@import '~magic.css/assets/scss/magic.scss';
+
+@font-face {
+    font-family: 'sf-pro-display';
+    src: url( './assets/fonts/SF-Pro-Display-Regular.otf' );
+}
+
+@font-face {
+    font-family: 'sf-pro-display-bold';
+    src: url( './assets/fonts/SF-Pro-Display-Bold.otf' );
+}
+
+@font-face {
+    font-family: 'sf-pro-display-light';
+    src: url( './assets/fonts/SF-Pro-Display-Light.otf' );
+}
+
+@font-face {
+    font-family: 'sf-pro-display-black';
+    src: url( './assets/fonts/SF-Pro-Display-Black.otf' );
+}
+
+@font-face {
+    font-family: 'open-sans';
+    src: url( './assets/fonts/OpenSans-Regular.ttf' );
+}
+
+@font-face {
+    font-family: 'open-sans-bold';
+    src: url( './assets/fonts/OpenSans-Bold.ttf' );
+}
+
+@font-face {
+    font-family: 'open-sans-light';
+    src: url( './assets/fonts/OpenSans-Light.ttf' );
+}
+
+@font-face {
+    font-family: 'open-sans-black';
+    src: url( './assets/fonts/OpenSans-ExtraBold.ttf' );
+}
+
+* {
+    font-family: open-sans-light;
+}
+
+ion-title, ion-card-title {
+    font-family: open-sans-bold;
+    font-size: 20sp;
+}
+
+.ion-text-bold, b {
+    font-family: open-sans-bold;
+}
+
+.primary-gradient {
+    background-image: linear-gradient(to right, #45BBD8, #029FBD) !important;
+}
+
+a {
+    all: unset;
+}
+
+.ion-row-bar-thick{
+    border-bottom: solid 3px black;
+}
+
+.vertical-center {
+    display: flex !important;
+    align-content: center !important;
+    align-items: center !important;
+}
+
+ion-card {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+    ion-card-header {
+        overflow: hidden;
+    }
+
+    ion-card-header.img-container img {
+        animation-timing-function: linear;
+    }
+}
+
+*[mode="md"] ion-card {
+    border-radius: 8px !important;
+
+    ion-card-header {
+        border-radius: 8px !important;
+    }
+}
+
+*[mode="ios"] ion-card {
+    border-radius: 16px !important;
+
+    ion-card-header {
+        border-radius: 16px !important;
+    }
+}
+
+ion-text#title {
+    font-size: 30px;
+    font-family: 'SF-Pro-Display-Black';
+    margin-bottom: 10px;
+  }
+  
+  ion-text#subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+    

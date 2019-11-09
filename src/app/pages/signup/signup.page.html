@@ -1,0 +1,115 @@
+<!-- <ion-header>
+  <ion-toolbar mode="ios" color="gradient">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="closeModal()">
+        <ion-icon name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="ion-no-padding">
+  <ion-item lines="none" class="ion-no-padding ion-margin-top ion-padding-top">
+    <ion-row class="ion-no-padding ion-margin-vertical">
+      <ion-col size="12" class="ion-text-center">
+        <img src="assets/imgs/etc/signup-image.svg" alt="smart-home" width="100%">
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item lines="none" no-padding>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-title mode="md" style="font-size: 1.5em;">
+          Welcome to BlocEstate
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item lines="none" no-padding class="ion-margin-bottom">
+    <ion-row class="ion-margin-bottom">
+      <ion-col size="12" class="ion-text-center">
+        <ion-text color="dark">
+          Before we do that, let's get you signed up!
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+  <ion-grid class="ion-text-center">
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none" color="light">
+          <ion-input type="mail" placeholder="Username"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none" color="light">
+            <ion-input [type]="passwordType" placeholder="Password"></ion-input>
+            <ion-icon [name]="passwordEye" color="primary" item-end (click)="togglePassword()"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col no-padding>
+        <ion-text>
+          <h6>
+            By pressing Submit, you agree to Bloc Estate's <ion-text color="primary">Terms of Use</ion-text>
+          </h6>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" color="gradient">
+          <ion-text class="ion-text-bold" style="font-size: 1.15em">Submit</ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col no-padding size="12">
+        <ion-text no-padding>
+          <h6>
+            Got an account? <ion-text color="primary" (click)="signin();">Sign In</ion-text>
+          </h6>
+        </ion-text>
+      </ion-col>
+      <ion-col no-padding class="ion-text-center" size="12">
+        <h6>
+          or
+        </h6>
+      </ion-col>
+    </ion-row>
+
+    <ion-row align-items-start>
+        <ion-col>
+          <ion-button expand="block" fill="outline" color="primary">
+            <ion-label class="ion-margin-end">Sign up with </ion-label>
+            <img src="assets/imgs/etc/google.svg" alt="google-logo" width="25px">
+            <ion-label class="ion-margin-start">Google</ion-label>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" fill="outline" color="primary">
+            <ion-label class="ion-margin-end">Sign up with </ion-label>
+            <img src="assets/imgs/etc/facebook.svg" alt="facebook-logo" width="25px">
+            <ion-label class="ion-margin-start">Facebook</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  
+  </ion-grid>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-button fill="clear" shape="round" (click)="closeModal()">
+      <ion-icon name="close" color="primary"></ion-icon>
+    </ion-button>
+  </ion-fab>
+</ion-content>
